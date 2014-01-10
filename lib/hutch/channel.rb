@@ -26,7 +26,7 @@ module Hutch
         content_type: 'application/json'
       }.merge(properties).merge(config.properties.call)
 
-      exchange.publish(payload)
+      exchange.publish(payload, properties)
     end
 
     private
