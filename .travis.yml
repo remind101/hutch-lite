@@ -1,0 +1,4 @@
+language: ruby
+services:
+- rabbitmq
+script: bundle exec rspec
