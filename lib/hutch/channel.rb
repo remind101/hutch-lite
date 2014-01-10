@@ -1,4 +1,5 @@
 require 'json'
+require 'securerandom'
 
 module Hutch
   class Channel
@@ -18,6 +19,7 @@ module Hutch
       payload = JSON.dump(message)
 
       properties = {
+        message_id: SecureRandom.uuid,
         persistent: true,
         routing_key: routing_key,
         timestamp: Time.now.to_i,

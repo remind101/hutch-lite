@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Hutch::VERSION
   spec.authors       = ['Eric J. Holmes']
   spec.email         = ['eric@ejholmes.net']
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ''
+  spec.description   = %q{A lightweight version of hutch for publishing messages in a thread safe manner.}
+  spec.summary       = %q{A lightweight version of hutch for publishing messages in a thread safe manner.}
+  spec.homepage      = 'https://github.com/remind101/hutch-lite'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
