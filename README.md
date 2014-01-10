@@ -1,24 +1,13 @@
-# Hutch
+# Hutch Lite
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'hutch'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hutch
+A lightweight version of [Hutch](https://github.com/gocardless/hutch) for publishing messages in a thread safe
+manner.
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+Hutch.publish('api.foo.bar', body: 'Do something')
+```
 
 ## Contributing
 
