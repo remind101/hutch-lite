@@ -3,7 +3,9 @@ require 'spec_helper'
 describe Hutch do
   describe '.publish' do
     it 'publishes a message' do
-      Hutch.publish('api.foo.bar', foo: :bar)
+      expect {
+        Hutch.publish('api.foo.bar', foo: :bar)
+      }.to_not raise_error
     end
   end
 
