@@ -1,11 +1,9 @@
 require 'hutch/version'
+require 'hutch/channel'
+require 'hutch/connection'
+require 'hutch/configuration'
 
 module Hutch
-
-  autoload :Channel, 'hutch/channel'
-  autoload :Connection, 'hutch/connection'
-  autoload :Configuration, 'hutch/configuration'
-
   class << self
     attr_reader :connection
 
@@ -17,8 +15,8 @@ module Hutch
       yield configuration
     end
 
-    def connect
-      @connection = Connection.new.tap do |connection|
+    def connection
+      @connection ||= Connection.new.tap do |connection|
         connection.start
       end
     end
@@ -33,11 +31,7 @@ module Hutch
     end
 
     def channel
-      channels[Thread.current.object_id] ||= Channel.new(connection)
-    end
-
-    def channels
-      @channels ||= {}
+      @channel ||= Channel.new(connection)
     end
   end
 end
